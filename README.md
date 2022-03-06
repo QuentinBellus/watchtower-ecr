@@ -10,7 +10,7 @@ docker run -d \
   -v /path/to/docker-config.json:/config.json \
   -e "AWS_ACCESS_KEY_ID=<ACCESS_KEY_ID>" \
   -e "AWS_SECRET_ACCESS_KEY=<SECRET_ACCESS_KEY>" \
-  heyarny/watchtower-ecr:latest --interval 30 --cleanup
+  quentinbellus/watchtower-ecr:latest --interval 30 --cleanup
 ```
 
 If you prefer, you can use the docker-compose.yml
@@ -20,7 +20,7 @@ services:
   my-service:
     image: <id>.dkr.ecr.<region>.amazonaws.com/my-image:latest
   watchtower:
-    image: heyarny/watchtower-ecr:latest
+    image: quentinbellus/watchtower-ecr:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /path/to/docker-config.json:/config.json
